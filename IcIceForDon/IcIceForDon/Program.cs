@@ -10,7 +10,7 @@ namespace IcIceForDon
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("kaç satırlık üçgen olsun?");
+            Console.WriteLine("Kaç satırlık üçgen olsun?");
             int yıldız = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 1; i <= yıldız; i++)
