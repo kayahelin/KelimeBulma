@@ -1,0 +1,7 @@
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\bin\Debug\IcIceForDon.exe.config
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\bin\Debug\IcIceForDon.exe
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\bin\Debug\IcIceForDon.pdb
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\obj\Debug\IcIceForDon.csprojAssemblyReference.cache
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\obj\Debug\IcIceForDon.csproj.CoreCompileInputs.cache
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\obj\Debug\IcIceForDon.exe
+C:\Users\Oznur\source\repos\IcIceForDon\IcIceForDon\obj\Debug\IcIceForDon.pdb
