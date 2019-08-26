@@ -11,6 +11,8 @@ namespace AdamAsmaca
     {
         static List<string> harfler = new List<string>();
         static string anaKelime;
+        static int tekrarSayisi;
+        static string bulunanSatir;
         static string kullaniciKelime;
         static int kalankullanım;
         static int sesliKalan;
@@ -28,7 +30,8 @@ namespace AdamAsmaca
             while (true)
             {
                 isfound = false;
-                Console.WriteLine(HarflerArasiBoslukBirak(kullaniciKelime));
+                Console.WriteLine(HarflerArasiBoslukBirak(kullaniciKelime) + " ");
+
                 Console.WriteLine("Bir Harf Gir");
                 harf = Console.ReadLine();
 
@@ -96,6 +99,8 @@ namespace AdamAsmaca
                 if (isfound == true)
                 {
                     Console.WriteLine("Tebrikler bildiniz");
+                    TekrarSayisiniArttir();
+                    Kaydet();
                     Console.WriteLine("Tekrar oynamak istermisiniz?(e/h)");
                     string Tekrar = Console.ReadLine();
 
@@ -108,7 +113,6 @@ namespace AdamAsmaca
                         break;
                     }
                 }
-
 
                 if (kalankullanım == 0)
                 {
@@ -128,15 +132,17 @@ namespace AdamAsmaca
                     Console.WriteLine(yeni);
                     string sonSans = Console.ReadLine();
 
-                    if (sonSans==anaKelime)
+                    if (sonSans == anaKelime)
                     {
                         Console.WriteLine("Tebrikler bildiniz");
-                      
+
                     }
                     else
                     {
                         Console.WriteLine("Bilemediniz:(");
                     }
+
+
                     Console.WriteLine("Tekrar oynamak istermisiniz?(e/h)");
                     string Tekrar = Console.ReadLine();
 
@@ -150,7 +156,6 @@ namespace AdamAsmaca
                     }
 
                     YeniOyun();
-
                 }
 
             }
@@ -160,13 +165,20 @@ namespace AdamAsmaca
         {
             harfler.Clear();
             anaKelime = "";
+            tekrarSayisi = 0;
             kullaniciKelime = "";
             kalankullanım = 5;
             sesliKalan = 2;
 
             Random rast = new Random();
             int rastgeleIndex = rast.Next(tumkelimeler.Count());
-            anaKelime = tumkelimeler[rastgeleIndex];
+            bulunanSatir = tumkelimeler[rastgeleIndex];
+            string[] ayrılan = bulunanSatir.Split(' ');
+            anaKelime = ayrılan[0];
+            if (ayrılan.Count() > 1)
+            {
+                tekrarSayisi = Convert.ToInt32(ayrılan[1]);
+            }
 
             for (int i = 0; i < anaKelime.Length; i++)
             {
@@ -211,5 +223,45 @@ namespace AdamAsmaca
 
             return boslukluKelime;
         }
+
+        static void TekrarSayisiniArttir()
+        {
+            for (int i = 0; i < tumkelimeler.Count; i++)
+            {
+
+                if (bulunanSatir == tumkelimeler[i])
+                {
+
+                    tekrarSayisi += 1;
+                    tumkelimeler[i] = anaKelime + " " + tekrarSayisi.ToString();
+                }
+
+            }
+            Console.WriteLine(anaKelime + " kelimesi " + tekrarSayisi + " kere soruldu");
+        }
+
+        static void Kaydet()
+        {
+            string yazdirilacakMetin = "";
+            for (int i = 0; i < tumkelimeler.Count(); i++)
+            {
+                yazdirilacakMetin = yazdirilacakMetin + tumkelimeler[i] + Environment.NewLine;
+            }
+
+            string fileName = @"C:\test\kelime.txt";
+
+
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+
+            StreamReader sr = new StreamReader(fs);
+            using (StreamWriter sw = new StreamWriter(fs))
+            {
+                fs.SetLength(0);
+                sw.Write(yazdirilacakMetin);
+            }
+            fs.Close();
+
+        }
+
     }
 }
