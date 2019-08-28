@@ -1,0 +1,7 @@
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\bin\Debug\OOP_Ogrenci_Takip.exe.config
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\bin\Debug\OOP_Ogrenci_Takip.exe
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\bin\Debug\OOP_Ogrenci_Takip.pdb
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\obj\Debug\OOP_Ogrenci_Takip.csprojAssemblyReference.cache
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\obj\Debug\OOP_Ogrenci_Takip.csproj.CoreCompileInputs.cache
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\obj\Debug\OOP_Ogrenci_Takip.exe
+C:\Users\Oznur\Desktop\HelinRepos\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\OOP_Ogrenci_Takip\obj\Debug\OOP_Ogrenci_Takip.pdb
