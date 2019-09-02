@@ -18,11 +18,16 @@ namespace AdamAsmaca
         static int sesliKalan;
         static List<string> tumkelimeler = new List<string>();
         static IList<string> sesliler = new List<string>();
+        static AdamAsmaMotor adamAsma = new AdamAsmaMotor();
 
         static void Main(string[] args)
         {
-            AyarlariYukle();
+            
+            adamAsma.AyarlariYukle();
+
+            //AyarlariYukle();
             YeniOyun();
+            
 
             string harf = "";
             bool isfound = false;
@@ -30,8 +35,8 @@ namespace AdamAsmaca
             while (true)
             {
                 isfound = false;
-                Console.WriteLine(HarflerArasiBoslukBirak(kullaniciKelime) + " ");
-
+                //Console.WriteLine(HarflerArasiBoslukBirak(kullaniciKelime));
+                string kelime = adamAsma.boslukluKullaniciKelime;
                 Console.WriteLine("Bir Harf Gir");
                 harf = Console.ReadLine();
 
@@ -63,7 +68,6 @@ namespace AdamAsmaca
                 for (int i = 0; i < anaKelime.Length; i++)
                 {
                     siraNo = harfler.IndexOf(anaKelime[i].ToString());
-
                     if (siraNo != -1)
                     {
                         char[] parcalanmis = kullaniciKelime.ToCharArray();
@@ -163,28 +167,7 @@ namespace AdamAsmaca
 
         static void YeniOyun()
         {
-            harfler.Clear();
-            anaKelime = "";
-            tekrarSayisi = 0;
-            kullaniciKelime = "";
-            kalankullanım = 5;
-            sesliKalan = 2;
-
-            Random rast = new Random();
-            int rastgeleIndex = rast.Next(tumkelimeler.Count());
-            bulunanSatir = tumkelimeler[rastgeleIndex];
-            string[] ayrılan = bulunanSatir.Split(' ');
-            anaKelime = ayrılan[0];
-            if (ayrılan.Count() > 1)
-            {
-                tekrarSayisi = Convert.ToInt32(ayrılan[1]);
-            }
-
-            for (int i = 0; i < anaKelime.Length; i++)
-            {
-                kullaniciKelime = kullaniciKelime + "_";
-            }
-
+            adamAsma.YeniOyun();
             Console.Clear();
             Console.WriteLine("Yeni Oyun Başladı");
 

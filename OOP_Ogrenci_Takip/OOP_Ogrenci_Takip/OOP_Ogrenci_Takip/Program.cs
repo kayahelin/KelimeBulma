@@ -13,12 +13,8 @@ namespace OOP_Ogrenci_Takip
         {
             while (true)
             {
-
-
-                Console.WriteLine("Yeni(Y),Güncelle(G),Sil(S),Ara(A)");
+                Console.WriteLine("Yeni(Y),Güncelle(G),Sil(S),Ara(A),Listele(L)");
                 string cevap = Console.ReadLine();
-
-
 
                 if (cevap == "y")
                 {
@@ -41,17 +37,14 @@ namespace OOP_Ogrenci_Takip
                     ogrenci.DogumYili = Convert.ToInt32(dogumyilicevap);
 
                     ogrenciler.Add(ogrenci);
-
                 }
                 else if (cevap == "g")
                 {
                     Console.WriteLine("Hangi numaralı öğrenciyi güncellemek istiyorsunuz?");
                     int guncellenecekNumara = Convert.ToInt32(Console.ReadLine());
-
                     bool secenekDogruMu = true;
                     while (secenekDogruMu)
                     {
-
                         Console.WriteLine("Öğrencinin hangi bilgisini güncellemek istiyorsunuz?");
                         Console.WriteLine("1.Adı");
                         Console.WriteLine("2.Soyadi");
@@ -59,7 +52,6 @@ namespace OOP_Ogrenci_Takip
                         Console.WriteLine("4.Numara");
                         Console.WriteLine("5.DogumYili");
                         int secenek = Convert.ToInt32(Console.ReadLine());
-
 
                         for (int i = 0; i < ogrenciler.Count; i++)
                         {
@@ -102,9 +94,36 @@ namespace OOP_Ogrenci_Takip
                 }
                 else if (cevap == "s")
                 {
+                    Console.WriteLine("Hangi numaralı öğrenciyi silmek istersiniz?");
+                    string entry = Console.ReadLine();
+                    int silinecekNumara = 0;
 
+                    if (!String.IsNullOrEmpty(entry))
+                    {
+                        silinecekNumara = Convert.ToInt32(entry);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Yanlış bir tuşa bastınız");
+                        Console.ReadLine();
+
+                    }
+
+                    for (int i = 0; i < ogrenciler.Count; i++)
+                    {
+                        if (ogrenciler[i].Numara == silinecekNumara)
+                        {
+                            ogrenciler.Remove(ogrenciler[i]);
+                            Console.WriteLine("Öğrenci silindi");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Aradığınız öğrenci bulunamadı.");
+                        }
+                    }
                 }
-                else if (cevap== "a")
+                else if (cevap == "a")
                 {
                     Console.WriteLine("Aranacak olan öğrencinin numarasını giriniz");
                     int aranacakNumara = Convert.ToInt32(Console.ReadLine());
@@ -112,27 +131,61 @@ namespace OOP_Ogrenci_Takip
 
                     for (int i = 0; i < ogrenciler.Count; i++)
                     {
-                        if (ogrenciler[i].Numara== aranacakNumara)
+                        if (ogrenciler[i].Numara == aranacakNumara)
                         {
-                            Console.WriteLine("Adı: "+ ogrenciler[i].Adi); 
-                            Console.WriteLine("Soyadı: "+ ogrenciler[i].Soyadi); 
-                            Console.WriteLine("Numarası: "+ ogrenciler[i].Numara); 
-                            Console.WriteLine("Sınıfı: "+ ogrenciler[i].Sınıf); 
-                            Console.WriteLine("Doğum Yılı: "+ ogrenciler[i].DogumYili);
+                            Console.WriteLine("Adı: " + ogrenciler[i].Adi);
+                            Console.WriteLine("Soyadı: " + ogrenciler[i].Soyadi);
+                            Console.WriteLine("Numarası: " + ogrenciler[i].Numara);
+                            Console.WriteLine("Sınıfı: " + ogrenciler[i].Sınıf);
+                            Console.WriteLine("Doğum Yılı: " + ogrenciler[i].DogumYili);
                             ogrenciBulunduMu = true;
                         }
 
                     }
 
-                    if (ogrenciBulunduMu==false)
+                    if (ogrenciBulunduMu == false)
                     {
                         Console.WriteLine("Aradığınız öğrenci bulunamadı.");
                     }
 
 
                 }
+                else if (cevap == "l")
+                {
+                    Console.WriteLine("Adı                 " + "Soyadı              " + "Numarası            ");
 
+                    for (int i = 0; i < ogrenciler.Count; i++)
+                    {
+                        string adi = ogrenciler[i].Adi;
+                        string soyadi = ogrenciler[i].Soyadi;
+                        string numarasi = ogrenciler[i].Numara.ToString();
+                        int boslukSayisi = 20 - adi.Length;
+                        int boslukSayisi2 = 20 - soyadi.Length;
+                        int boslukSayisi3 = 20 - numarasi.Length;
+                        for (int a = 0; a < boslukSayisi; a++)
+                        {
+                            adi += " ";
+                        }
+                        Console.Write(adi);
 
+                        for (int a = 0; a < boslukSayisi2; a++)
+                        {
+                            soyadi += " ";
+                        }
+                        Console.Write(soyadi);
+
+                        for (int a = 0; a < boslukSayisi3; a++)
+                        {
+                            numarasi += " ";
+                        }
+                        Console.Write(numarasi);
+                        Console.WriteLine();
+                    }
+                   
+                    Console.ReadLine();
+                    
+
+                }
             }
         }
 
@@ -145,5 +198,6 @@ namespace OOP_Ogrenci_Takip
             public int DogumYili { get; set; }
 
         }
+
     }
 }

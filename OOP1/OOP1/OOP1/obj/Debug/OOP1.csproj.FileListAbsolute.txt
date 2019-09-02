@@ -1,0 +1,7 @@
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\bin\Debug\OOP1.exe.config
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\bin\Debug\OOP1.exe
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\bin\Debug\OOP1.pdb
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\obj\Debug\OOP1.csprojAssemblyReference.cache
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\obj\Debug\OOP1.csproj.CoreCompileInputs.cache
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\obj\Debug\OOP1.exe
+C:\Users\Oznur\Desktop\HelinRepos\OOP1\OOP1\OOP1\obj\Debug\OOP1.pdb
